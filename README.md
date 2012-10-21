@@ -5,7 +5,7 @@ reveal.js + webcam access + gesture recognition = gesture controlled presentatio
 
 Inspired, I set off to make a mechanism to control reveal.js. I have to say, Hakim El Hattab made reveal.js really easy to extend! Thanks!
 
-Have fun!
+Let's cut to the chase. [Here is a live demo.](http://reveal.rs.af.cm/) Have fun!
 
 ##How to use
 
