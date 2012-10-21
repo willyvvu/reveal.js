@@ -1,31 +1,17 @@
 # What's new in my fork
 
-After recently seeing reveal.js and Web RTC, I thought to myself:
-reveal.js + webcam access + gesture recognition = gesture controlled presentations
+This is what I got when I combined webcam-based gesture recognition with Hakim El Hattab's reveal.js.
+It took me a while to write and fine tune the detection algorithms. Even then, the algorithms are only about 80% accurate. You get the gist of it though: 
+A flick of the hand in mid-air changes the slide.
+A two hand flick up or down activates the slide overview.
 
-Inspired, I set off to make a mechanism to control reveal.js. I have to say, Hakim El Hattab made reveal.js really easy to extend! Thanks!
-
-Let's cut to the chase. [Here is a live demo.](http://reveal.rs.af.cm/) Have fun!
+View the live demo! [http://reveal.rs.af.cm/](http://reveal.rs.af.cm/)
 
 ##How to use
 
-You might need to enable Web RTC found at chrome://flags
+Instructions and troubleshooting are included in the live demo.
 
-At the prompt for webcam access, click Allow.
-
-Use a flick of your hand about a meter away from the webcam to navigate.
-
-A two hand movement up or down will toggle the slide overview.
-
-It's not perfect. In fact, it's far from perfect. At least it can catch your motions about 70% of the time...
-
-## Having trouble?
-
-If it's being over or under sensitive, try varying your distance from the webcam. Sometimes that will help.
-
-An open palm works best.
-
-I included a really basic node.js file server. The page needs to be served in order to allow webcam access.
+P.S. I included a really basic node.js file server. The page needs to be served in order to allow webcam access.
 
 # Forked from reveal.js
 

@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - Webcam-based Gesture Control with an HTML Presentation Framework</title>
+		<title>Webcam-based gesture recognition with reveal.js</title>
 
-		<meta name="description" content="A webcam-based gesture control system tied to a framework for easily creating beautiful presentations using HTML">
+		<meta name="description" content="Webcam-based gesture recognition with reveal.js">
 		<meta name="author" content="William Wu (reveal.js by Hakim El Hattab)">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,161 +33,196 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<section>
-						<h1>Reveal.js<br>
-						</h1>
-						<blockquote>"A framework for easily creating<br>beautiful presentations using HTML"</blockquote>
-						<div>by&nbsp;Hakim El Hattab</div>
-					</section>
-					<section>
-						<h2>Reveal.js is a presentation framework</h2>
-						<p>It's similar to Prezi or Powerpoint, except it's in HTML5.</p>
-						<p>
-						<br>
-					</p>
-					<p>HTML5 is the reason behind Reveal's speed, looks, and</p>
-					<p>COOL 3D TRANSITIONS</p>
-					<p>
-					<br>Beat that, Prezi! (which uses Flash)</p>
-				</section>
-				<section>
-					<h2>It's different.<br>
-					</h2>
-					<div>In addition to going left and right,&nbsp;</div>
-					<div>you can also go&nbsp;</div>
-					<div>
-						<br>
-					</div>
-					<div>up</div>
-					<div>and</div>
-					<div>down.</div>
-					<div>
-						<br>
-					</div>
-					<div>There's also a slide overview if you hit Esc.</div>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>Web RTC</h2>
-					<div>This is a developing standard in webpages to get data from your webcam and your microphone.</div>
-					<div>
-						<br>
-					</div>
-					<div>Once you have a video feed, you can display, alter, and extract information from it using JavaScript.</div>
-				</section>
-				<section>
-					<h2>Chrome meets Javascript</h2>
-					<div>Chrome runs Javascript using its wonderfully fast</div>
-					<div>
-						<b>V8 Javascript Engine.</b>
-					</div>
-					<div>
-						<br>
-					</div>
-					<div>It's remarkably fast. I ran my Tic-tac-toe algorithm on multiple browsers and this is how V8 stacks up:<br>
-					</div>
-					<div>
-						<br>
-					</div>
-					<div>
-						<ol>
-							<li>Chrome: 199 ms<br>
-							</li>
-							<li>FF: 241 ms<br>
-							</li>
-							<li>Opera: 439 ms<br>
-							</li>
-							<li>IE: &gt;16000 ms<br>
-							</li>
-						</ol>
-					</div>
-				</section>
-			</section>
-			<section>
-				<h2>My thought Process</h2>
-				<div>You can get fabulous presentations and cool 3D transitions with Reveal.js...</div>
-				<div>
-					<br>
-				</div>
-				<div>You can get user input through the webcam using Web RTC...</div>
-				<div>
-					<br>
-				</div>
-				<div>Mash them together and... <b>Bam</b>!</div>
-			</section>
-			<section>
-				<h2>All together</h2>
-				<div>Armed with two technologies and some spare time, I wrote some signal processing JS (took a while to get the algorithms <i>just</i> right) and overlay interface.</div>
-				<div>
-					<br>
-				</div>
-				<div>I believe this will be the one aspect of future of computing.</div>
-			</section>
-			<section>
-				<section>
-					<h2>How To</h2>
-					<div>
-						<u>Use a flick of your hand </u>in mid-air to change the slide.</div>
-						<div>
-							<br>
-							<u>A two hand swipe up or down</u> activates the slide overview.<br>
-						</div>
-					</section>
-					<section>
-						<h2>Usage Tips</h2>
-						<div>
-							<ul>
-								<li>Try to keep the rest of your body still.</li>
-								<li>Your hand should preferably be 1 meter from the camera.</li>
-								<li>If it's being over or under sensitive, try varying your distance.</li>
-								<li>Gestures should be performed with open palms facing the camera.</li>
-								<li>To keep unintentional actions to a minimum, try bringing your hands out of sight.<br>
-								</li>
-							</ul>
-						</div>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>What about Kinect?</h2>
-						<div>Kinect uses a 3D sensor, which costs around $100.</div>
-						<div>
-							<br>
-						</div>
-						<div>This uses a webcam, which is built into all newer computers. The cheaper ones come at $20 a pop.</div>
-						<div>
-							<br>
-						</div>
-						<div>However, there are limitations of webcams.</div>
-					</section>
-					<section>
-						<h2>Webcams</h2>
-						<div>Webcams cannot detect depth. It cannot accurately detect position in 3D space.</div>
-						<div>
-							<br>
-						</div>
-						<div>Webcams can only detect motion. The motion is what I'm using.</div>
-					</section>
-				</section>
-				<section>
-					<h2>The WOW factor</h2>
-					<div>You can control the computer without touching it!</div>
-					<div>
-						<br>
-					</div>
-					<div>The computer can distinguish between different gestures!</div>
-					<div>
-						<br>
-					</div>
-					<div>Who needs touchscreens when you have this?</div>
-				</section>
-			</div>
+<div class="slides">
+    <section>
+        <section>
+            <h1>What is this?</h1>
+            <div>This is what I got when I combined&nbsp;<b>webcam-based gesture recognition</b> with Hakim El Hattab's <i>reveal.js.</i>
+        </div>
+        <div>It took me a while to write and fine tune the detection algorithms. Even then, the algorithms are only about 80% accurate. You get the gist of it though:&nbsp;</div>
+        <div>
+            <u>A flick of the hand&nbsp;</u>in mid-air changes the slide.</div>
+            <p>
+            <u>A two hand flick up or down</u>&nbsp;activates the slide overview.</p>
+            <p>Tips and troubleshooting in the slides below (you can still use the keyboard or reveal.js's built in controls)</p>
+</section>
+            <section>
+                <h2>USAGE TIPS</h2>
+                <div>(Troubleshooting is in the slide below this one)</div>
+                <div>
+                    <div style="">
+                        <ul>
+                            <li>The detection algorithm can determine the amount and position of motion. It will only change the slide if your amount of motion exceeds a threshold.</li>
+                            <li>Try to keep the rest of your body still.</li>
+                            <li>Your hand should preferably come within two to three feet away from the camera.</li>
+                            <li>Gestures should be performed with open palms facing the camera.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Troubleshooting</h2>
+                <div>
+                    <li style="">You need a webcam. You're sunk if you don't have one.</li>
+                    <li style="">If you're not viewing this in Google Chrome, please do.</li>
+                    <li style="">If you're using Chrome, you should get a message asking to access your webcam. Hit Allow.</li>
+                    <li style="">If you aren't getting that message, refresh.</li>
+                    <li style="">If refreshing doesn't work, head over to chrome://flags and enable all flags that mention WebRTC. Restart Chrome.</li>
+                    <li style="">If that doesn't work, I don't know what will. You can at least watch a video of this at <a href="http://youtu.be/VEX-dgV3iZs">http://youtu.be/VEX-dgV3iZs</a>.</li>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>What is REVEAL.JS?</h2>
+<blockquote>A framework for easily creating<br>beautiful presentations using HTML</blockquote>
+<div style="letter-spacing: normal;text-transform: none;">-Hakim El Hattab, the author</div>
+                <div style="letter-spacing: normal;text-transform: none;">
+                    <br>
+                </div>
+                <div style="letter-spacing: normal;text-transform: none;">(go down for details)</div>
+</section>
+                <section>
+                    <h2>REVEAL.JS IS A PRESENTATION FRAMEWORK</h2>
+<p style="letter-spacing: normal;text-transform: none;">It's similar to Prezi or Powerpoint, except it's in HTML5.</p>
+<p style="letter-spacing: normal;text-transform: none;">
+    <br>
+</p>
+<p style="letter-spacing: normal;text-transform: none;">HTML5 is the reason behind Reveal's speed, looks, and</p>
+<p style="letter-spacing: normal;text-transform: none;">COOL 3D TRANSITIONS</p>
+<p style="letter-spacing: normal;text-transform: none;">
+    <br>Beat that, Prezi! (which uses Flash)</p>
 
+
+</section>
+                    <section>
+                        <h2>IT'S DIFFERENT.</h2>
+                        <div>
+                            <div style="">In addition to going left and right,&nbsp;</div>
+                            <div style="">you can also go&nbsp;</div>
+                            <div style="">
+                                <br>
+                            </div>
+                            <div style="">up</div>
+                            <div style="">and</div>
+                            <div style="">down.</div>
+                            <div style="">
+                                <br>
+                            </div>
+                            <div style="">There's also a slide overview if you hit Esc.</div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is WebRTC?</h2>
+                        <div>This is a developing standard in webpages to get data from your webcam and your microphone.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>Once you have a video feed, you can display, alter, and extract information from it using JavaScript.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>Why Chrome? Look below to find out.</div>
+                    </section>
+                    <section>
+                        <h2>Chrome meets Javascript</h2>
+                        <div>Chrome runs Javascript using it's wonderfully fast</div>
+                        <div>
+                            <b>V8 Javascript Engine.</b>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>It's remarkably fast. I ran my Tic-tac-toe algorithm on multiple browsers and this is how V8 stacks up:<br>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>
+                            <ol>
+                                <li>Chrome: 199 ms<br>
+                                </li>
+                                <li>FF: 241 ms<br>
+                                </li>
+                                <li>Opera: 439 ms<br>
+                                </li>
+                                <li>IE: &gt;16000 ms<br>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <h2>My thought Process</h2>
+                    <div>You can get fabulous presentations and cool 3D transitions with Reveal.js...</div>
+                    <div>You can get user input through the webcam using Web RTC...</div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>
+                        <div>Armed with the two and some spare time, I wrote some signal processing JS (took a while to get the algorithms&nbsp;<i>just</i>&nbsp;right) and overlay interface.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>I believe this will be the one aspect of future of computing.</div>
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <h2>What about Kinect?</h2>
+                        <div>Kinect uses a 3D sensor, which costs around $100.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>This uses a webcam, which is built into all newer computers. The cheaper ones come at $20 a pop.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>However, there are limitations of webcams as described beneath.</div>
+                    </section>
+                    <section>
+                        <h2>Webcams</h2>
+                        <div>Webcams cannot detect depth.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>Since all you get from a webcam is a picture, there is not much data you actually get, compared to a 3D scanner.</div>
+                        <div>
+                            <br>
+                        </div>
+                        <div>The lack of data forces developers to think outside the box and write algorithms to <i>infer</i>&nbsp;what is actually going on without the depth data.</div>
+                    </section>
+                </section>
+                <section>
+                    <h2>The WOW factor</h2>
+                    <div>You can control the computer without touching it!</div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>The computer can distinguish between different gestures!</div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>Who needs touchscreens when you have this?</div>
+                </section>
+                <section>
+                    <h2>mORE INFO</h2>
+                    <div>
+                        <div>Fork me on Github!&nbsp;<a href="https://github.com/wvvvw/reveal.js" style="">https://github.com/wvvvw/reveal.js</a>
+                    </div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>My site is at&nbsp;<a href="http://willys-apps.appspot.com/">http://willys-apps.appspot.com</a>
+                </div>
+                <a href="http://willys-apps.appspot.com/">
+                </a>
+            </div>
+        </section>
+    </div>
 		</div>
-
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 

@@ -1,7 +1,7 @@
 {
 	"author": "William W. Wu (reveal.js by Hakim El Hattab)",
 	"name": "reveal.js",
-	"description": "Gesture controlled HTML5 Slideware with Presenter Notes",
+	"description": "Webcam-based gesture recognition with reveal.js",
 	"version": "1.5.0",
 	"repository": {
 		"type": "git",
