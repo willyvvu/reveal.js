@@ -7,7 +7,7 @@ navigator.webkitGetUserMedia({audio:true,video:true},function(stream){
 	s=stream
 	video.src=window.webkitURL.createObjectURL(stream)
 	video.addEventListener('play',
-		function(){setInterval(dump,1000/15)}
+		function(){setInterval(dump,1000/25)}
 	)
 },function(){
 	console.log('OOOOOOOH! DEEEEENIED!')
