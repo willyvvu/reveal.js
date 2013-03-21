@@ -1,6 +1,6 @@
 {
 	"author": "William W. Wu (reveal.js by Hakim El Hattab)",
-	"name": "reveal.js",
+	"name": "revealjs",
 	"description": "Webcam-based gesture recognition with reveal.js",
 	"version": "1.5.0",
 	"repository": {
