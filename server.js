@@ -12,7 +12,7 @@ function handler (req, res) {
 	}
 	uri=uri.replace(/%20/g,' ')
 	console.log(uri)
-	var filename = path.join(process.cwd(), uri);
+	var filename = path.join(__dirname, uri);
 	fs.readFile(filename,
 		function (err, data) {
 		if (err) {
