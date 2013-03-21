@@ -8,10 +8,10 @@
 		"url": "git://github.com/wvvvw/reveal.js.git"
 	},
 	"engines": {
-		"node": "~0.8.0"
+		"node": "0.8.x"
 	},
 	"dependencies": {
-		
+		"mime":"1.2.7",
+		"npm":"1.2.11"
 	},
-	"devDependencies": {}
 }
