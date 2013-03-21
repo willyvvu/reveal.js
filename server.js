@@ -4,7 +4,7 @@ var app = require('http').createServer(handler)
   , url = require('url')
   ,mime=require('mime')
 
-app.listen(80);
+app.listen(process.env.PORT||5000);
 function handler (req, res) {
 	var uri = url.parse(req.url).pathname;
 	if(uri=='/'){
