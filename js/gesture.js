@@ -24,8 +24,55 @@ function dump(){
 	_.drawImage(video,width,0,-width,height)
 	draw=_.getImageData(0,0,width,height)
 	//c_.putImageData(draw,0,0)
+	skinfilter()
 	test()	
 }
+huemin=0.0
+huemax=0.10
+satmin=0.0
+satmax=1.0
+valmin=0.4
+valmax=1.0
+function skinfilter(){
+	
+	skin_filter=_.getImageData(0,0,width,height)
+	var total_pixels=skin_filter.width*skin_filter.height
+	var index_value=total_pixels*4
+	
+	var count_data_big_array=0;
+	for (var y=0 ; y<height ; y++)
+	{
+		for (var x=0 ; x<width ; x++)
+		{
+			index_value = x+y*width
+			r = draw.data[count_data_big_array]
+            		g = draw.data[count_data_big_array+1]
+            		b = draw.data[count_data_big_array+2]
+            		a = draw.data[count_data_big_array+3]
+
+            		hsv = rgb2Hsv(r,g,b);
+            		//When the hand is too lose (hsv[0] > 0.59 && hsv[0] < 1.0)
+			//Skin Range on HSV values
+			if(((hsv[0] > huemin && hsv[0] < huemax)||(hsv[0] > 0.59 && hsv[0] < 1.0))&&(hsv[1] > satmin && hsv[1] < satmax)&&(hsv[2] > valmin && hsv[2] < valmax)){
+
+	       			skin_filter[count_data_big_array]=r
+				skin_filter[count_data_big_array+1]=g
+				skin_filter[count_data_big_array+2]=b
+				skin_filter[count_data_big_array+3]=a
+	        	}else{
+
+	        		skin_filter.data[count_data_big_array]=
+				skin_filter.data[count_data_big_array+1]=
+				skin_filter.data[count_data_big_array+2]=0
+				skin_filter.data[count_data_big_array+3]=0
+	        	}
+
+            		count_data_big_array=index_value*4;
+		}
+	}
+	draw=skin_filter
+}
+
 last=false
 thresh=150
 down=false
