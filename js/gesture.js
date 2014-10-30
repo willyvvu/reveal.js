@@ -10,7 +10,7 @@ navigator.webkitGetUserMedia({audio:true,video:true},function(stream){
 		function(){setInterval(dump,1000/25)}
 	)
 },function(){
-	console.log('OOOOOOOH! DEEEEENIED!')
+	throw new Error('OOOOOOOH! DEEEEENIED!');
 })
 compression=5
 width=height=0
