@@ -270,7 +270,7 @@ var Reveal = (function(){
 
 		// Notify listeners that the presentation is ready
 		dispatchEvent( 'ready', {
-			'indexh': indexh, 
+			'indexh': indexh,
 			'indexv': indexv,
 			'currentSlide': currentSlide
 		} );

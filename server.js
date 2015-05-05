@@ -17,7 +17,7 @@ function handler (req, res) {
 		function (err, data) {
 		if (err) {
 			res.writeHead(404);
-			return res.end('Error loading file...');			  
+			return res.end('Error loading file...');
 		}
 		res.setHeader('Content-type',mime.lookup(uri));
 		res.writeHead(200);
