@@ -25,7 +25,7 @@ function dump(){
 	draw=_.getImageData(0,0,width,height)
 	//c_.putImageData(draw,0,0)
 	skinfilter()
-	test()	
+	test()
 }
 huemin=0.0
 huemax=0.10
@@ -34,11 +34,11 @@ satmax=1.0
 valmin=0.4
 valmax=1.0
 function skinfilter(){
-	
+
 	skin_filter=_.getImageData(0,0,width,height)
 	var total_pixels=skin_filter.width*skin_filter.height
 	var index_value=total_pixels*4
-	
+
 	var count_data_big_array=0;
 	for (var y=0 ; y<height ; y++)
 	{
@@ -74,7 +74,7 @@ function skinfilter(){
 }
 
 function rgb2Hsv(r, g, b){
-	
+
 	r = r/255
 	g = g/255
 	b = b/255;
