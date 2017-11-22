@@ -7,7 +7,7 @@ A two hand flick up or down activates the slide overview.
 
 View the live demo! [http://revealjs.herokuapp.com/](http://revealjs.herokuapp.com/)
 
-##How to use
+## How to use
 
 Instructions and troubleshooting are included in the live demo.
 
