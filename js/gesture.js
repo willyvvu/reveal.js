@@ -5,7 +5,7 @@ ccanvas=document.getElementById('comp')
 c_=ccanvas.getContext('2d')
 navigator.webkitGetUserMedia({audio:true,video:true},function(stream){
 	s=stream
-	video.src=window.webkitURL.createObjectURL(stream)
+	video.srcObject=stream
 	video.addEventListener('play',
 		function(){setInterval(dump,1000/25)}
 	)
